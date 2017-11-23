@@ -27,7 +27,7 @@ lambdas = zeros(nbrLambdas,1);
 count = 1; 
 for lambda=lambda1:step:lambda2
     % Interpolate the experimental refractive index of the particle...
-    npart = interp1q(wlgths,n,lambda) + i*interp1q(wlgths,k,lambda);
+    npart = interp1q(wlgths,n,lambda) + 1i*interp1q(wlgths,k,lambda);
     
     [e s a] = MieScattering(lambda,R,n_m,npart);
     Qsca(count,1) = s/A;
